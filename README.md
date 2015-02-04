@@ -17,7 +17,11 @@ timestamp, err = date.Parse("Mar 14 2003")
 
 ## Example
 ```go
-import "github.com/joyt/godate"
+import (
+  "github.com/joyt/godate"
+  "time"
+  "fmt"
+)
 
 func main() {
   var t time.Time
