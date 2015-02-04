@@ -1,4 +1,4 @@
-package main
+package date
 
 import (
 	"bytes"
@@ -442,20 +442,4 @@ func formatWithSeparators(f string, sep [][]string) string {
 		f = strings.Replace(f, ".", s, 1)
 	}
 	return strings.Replace(f, "．", ".", -1)
-}
-
-func main() {
-	var t time.Time
-	t = MustParse("Aug 31 1999")
-	fmt.Println(t)
-	t = MustParse("Tuesday, August 31, 1999")
-	fmt.Println(t)
-	t = MustParse("Tue 31 Aug '99")
-	fmt.Println(t)
-	t = MustParse("08/31/1999")
-	fmt.Println(t)
-	t = MustParse("8/31/1999 20:05")
-	fmt.Println(t)
-	t = MustParse("8/31/1999 8:05PM EST")
-	fmt.Println(t)
 }
