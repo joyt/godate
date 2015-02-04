@@ -2,6 +2,8 @@
 Golang package for intelligently parsing date strings like javascript's Date.parse() and getting the layout of date strings.
 Fully compatible with the native time package.
 
+This package is still under development.
+
 # Usage
 ### Installation
 ```
@@ -34,7 +36,7 @@ func main() {
   fmt.Println(t)
   // Prints 1999-08-31 00:00:00 +0000 UTC
   
-  t = date.MustParse("Tues 31 Aug '99")
+  t = date.MustParse("Tue 31 Aug '99")
   fmt.Println(t)
   // Prints 1999-08-31 00:00:00 +0000 UTC
   
@@ -57,7 +59,6 @@ func main() {
 ```
 
 # Notes
-This package is still under development.
 
 The parser is extremely lenient, and will try to interpret whatever it is given as a date as much as possible.
 
