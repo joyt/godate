@@ -10,7 +10,9 @@ go get github.com/joyt/godate
 
 In your program:
 ```go
-timestamp, err := date.Parse("Mar 14 2003")
+var timestamp time.Time
+var err error
+timestamp, err = date.Parse("Mar 14 2003")
 ```
 
 ## Example
@@ -43,6 +45,10 @@ func main() {
   t = date.MustParse("8/31/1999 8:05PM EST")
   fmt.Println(t)
   // Prints 1999-08-31 21:05:00 -0400 EDT
+  
+  t = date.MustParse("Aug-1999")
+  fmt.Println(t)
+  // Prints 1999-08-01 00:00:00 +0000 UTC
 }
 ```
 
