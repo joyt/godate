@@ -40,9 +40,9 @@ func main() {
   fmt.Println(t)
   // Prints 1999-08-31 00:00:00 +0000 UTC
   
-  t = date.MustParse("8/31/1999 20:05")
+  t = date.MustParse("8/31/1999 8:05PM EST")
   fmt.Println(t)
-  // Prints 1999-08-31 20:05:00 +0000 UTC
+  // Prints 1999-08-31 21:05:00 -0400 EDT
 }
 ```
 
