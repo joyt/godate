@@ -6,9 +6,22 @@ import (
 )
 
 func TestDates(t *testing.T) {
+	// Invalid dates.
+	tests := []string{
+		"",
+		"HI",
+		"20938258384738",
+		"23.44",
+	}
+	for _, date := range tests {
+		if d, err := Parse(date); err == nil {
+			t.Errorf("Input %q was parsed to a date %v", date, d)
+		}
+	}
+
 	// Full date, no ambiguity.
 	correct := time.Date(1989, 6, 25, 0, 0, 0, 0, time.UTC)
-	tests := []string{
+	tests = []string{
 		"25 Jun 1989",
 		"Jun 25 1989",
 		"Jun 25 '89",

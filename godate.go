@@ -2,6 +2,7 @@ package date
 
 import (
 	"bytes"
+	"errors"
 	"fmt"
 	"regexp"
 	"strings"
@@ -186,6 +187,9 @@ func ParseInLocation(s string, loc *time.Location) (time.Time, error) {
 // and if successful, returns the timestamp and the layout of the
 // string.
 func ParseAndGetLayout(date string) (time.Time, string, error) {
+	if len(strings.TrimSpace(date)) == 0 {
+		return time.Time{}, "", errors.New("Empty string cannot be parsed to date")
+	}
 	// Check standard date formats first.
 	for _, f := range standardDateFormats {
 		if t, err := time.Parse(f, date); err == nil {
